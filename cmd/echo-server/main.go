@@ -24,7 +24,7 @@ func main() {
 	}
 
 	fmt.Printf("Echo server listening on port %s.\n", port)
-
+	
 	err := http.ListenAndServe(
 		":"+port,
 		h2c.NewHandler(
@@ -33,6 +33,7 @@ func main() {
 		),
 	)
 	if err != nil {
+		fmt.Printf("Error\n")
 		panic(err)
 	}
 }
